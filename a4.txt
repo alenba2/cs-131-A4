@@ -1,7 +1,9 @@
 Script started on 2022-10-22 20:46:44-04:00
 
-kallen@sjsu:~\[allen@sjsu ~]$ grep retweeted Tweets2NoBot.tsv | awk -F"\t" '{print $5}' | sed ''s/^.* id=//g' | sed 's/ type=retweeted.//g' > retweets.txt
-kallen@sjsu:~\[allen@sjsu ~]$ fgrep -f retweets.txt Orig_Tweets2NoBot.tsv | awk -F'\t' '{pprint $2}'  | sort |  uniq -c | sort -nr -k 1 | head -10 > 10Tweets.txt
+kallen@sjsu:~\[allen@sjsu ~]$ grep retweeted Tweets2NoBot.tsv | awk -F"\t" '{print $5}' | sed '
+'s/^.* id=//g' | sed 's/ type=retweeted.//g' > retweets.txt
+kallen@sjsu:~\[allen@sjsu ~]$ fgrep -f retweets.txt Orig_Tweets2NoBot.tsv | awk -F'\t' '{p
+print $2}'  | sort |  uniq -c | sort -nr -k 1 | head -10 > 10Tweets.txt
 {
 Note: Question 0
 
@@ -68,8 +70,10 @@ gnuplot> set style data histograms
 gnuplot> plot 'HistogramSetup.txt' using 2:xtic(1)
 gnuplot> exit
 kallen@sjsu:~/a4\[allen@sjsu a4]$ cd ..
-kallen@sjsu:~\[allen@sjsu ~]$ awk -F"\t"  '( $6 != Null) {print $6,$4}' Tweets2NoBot.tsv | sortt | uniq -c | sort -nr -k 1 | head -30 > Top30.txt
-kallen@sjsu:~\[allen@sjsu ~]$ awk -F"\t" '($4 != Null){print toupper($4)}' Tweets2_NotBot.tsv || sort |  uniq -c | sort -nr -k 1 | head -30 > Compare2.txt
+kallen@sjsu:~\[allen@sjsu ~]$ awk -F"\t"  '( $6 != Null) {print $6,$4}' Tweets2NoBot.tsv | sort
+t | uniq -c | sort -nr -k 1 | head -30 > Top30.txt
+kallen@sjsu:~\[allen@sjsu ~]$ awk -F"\t" '($4 != Null){print toupper($4)}' Tweets2_NotBot.tsv |
+| sort |  uniq -c | sort -nr -k 1 | head -30 > Compare2.txt
 awk: fatal: cannot open file `Tweets2_NotBot.tsv' for reading (No such file or directory)
 kallen@sjsu:~\[allen@sjsu ~]$ awk -F" "  '{print toupper($3)}' Top30.txt > A3Upper.txt
 kallen@sjsu:~\[allen@sjsu ~]$ awk -F" "  '{print $2}' Compare2.txt > A2Upper.txt
@@ -118,6 +122,8 @@ As shown above the differences between the two lists
 
 Questinon #6
 
+Ploted for bot Retweets and replies.
+It looks like a black void due to the amound of data is inside each csv file. Some of the nodes had more lines than others.
 
 }
 
